@@ -1,1 +1,487 @@
-hw2023-10-31.html
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <title>HW 2023/10/31</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+
+      #theme-btn {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--btn_color);
+      }
+      #theme-btn:hover {
+        color: var(--btn_hover);
+      }
+      #btn_container {
+        margin: 0.5em;
+        border: 0.1em solid var(--top_bar_border);
+        border-radius: 0.5em;
+        padding: 0.5em;
+        position: fixed;
+        z-index: 10;
+      }
+
+      body.dark {
+        background-image: url("pattern.png");
+        background-repeat: repeat;
+        background-size: 8em;
+        background-blend-mode:hard-light;
+        font-family: 'Mountains of Christmas', cursive;
+      }
+      body {
+        background-color: var(--bg);
+        color: var(--txt);
+        font-family: 'Mountains of Christmas', cursive;
+      }
+
+      .light
+      {
+        --bg: rgb(145 127 98);
+        /* --bg: beige; */
+        --container_bg: rgb(205 181 161);
+        --btn_color: red;
+        --txt: rgb(75 24 9); 
+        --qtn_bg: rgb(199 182 158);
+        --qtn_txt: rgb(104 44 28);
+        --mono: rgb(176, 79, 66);
+        --mono_bdr: rgba(176, 79, 66, 0.385);
+        --ans: rgb(61 75 41);
+      }
+      .dark 
+      {
+        --bg: rgb(28 23 30);
+        --container_bg: rgb(56 33 53);
+        --btn_color: red;
+        --txt: rgb(195 135 80); 
+        --qtn_bg: rgb(57, 44, 68);
+        --mono: rgb(198, 176, 178);
+        --mono_bdr: rgba(198, 176, 178, 0.508);
+        --ans: rgb(194 223 63);
+      }
+
+      body[class*="dark"] img.power-tower{ 
+        filter: invert(100%) sepia(2%) saturate(412%) hue-rotate(239deg) brightness(116%) contrast(87%);
+      }
+      img.power-tower {
+        filter: none;
+      }
+
+      .img-container 
+      {
+        /* min-width: 400px; */
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+      .img-box {
+        min-width: 300px;
+        width: 50%;
+        filter: brightness(85%) sepia(43%);
+        /* margin: 5px; */
+      }
+      body[class*="dark"] .img-box {
+        filter: contrast(80%) brightness(80%);
+      }
+      .spotlight {
+        min-width: 300px;
+        width: 80%;
+      }
+      .equation, math {
+        color: rgb(131, 140, 101);
+        font-family: 'Times New Roman', Times, serif;
+        /* font-style: italic; */
+        margin-inline: 7px;
+        text-shadow: 0px 0px 7.5px rgb(152, 170, 96);
+      }
+
+      .content-wrapper {
+        background-color: var(--container_bg);
+        border-radius: 10px;
+        padding: 2em;
+        max-width: 960px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .content > * {
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 24px;
+        color: hsl(131 140 101);
+      }
+
+      .centered-block-x {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 960px;
+      }
+
+      .header {
+        text-align: center;
+        background-color: rgb(195 135 80);
+        max-width: 800px;
+        color: #171118;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 30px;
+        border: solid 5px rgb(185 101 31);
+      }
+
+      div.asg {
+        margin-top: 40px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+      }
+
+      div.qtn {
+        border: double 5px rgb(171 83 21);
+        padding-left: 20px;
+        padding-right: 10px;
+        border-radius: 5px;
+        background-color: var(--qtn_bg);
+        color: var(--qtn_txt);
+        /* margin-top: 10px; */
+        margin-bottom: 25px;
+      }
+
+      code.mono 
+      {
+        font-size: 18px;
+        border: solid 2px var(--mono_bdr);
+        color: var(--mono);
+        font-weight: bolder;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-left: 3px;
+        padding-right: 3px;
+        padding-top: 3px;
+        border-radius: 6px;
+      }
+
+      div.ans::before {
+        content: "ANSWER:";
+        color: var(--ans);
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      div.ans {
+        padding-left: 20px;
+        padding-right: 10px;
+        border-left: solid 3px var(--ans);
+        margin-bottom: 40px;
+      }
+
+      pre[class*="language-"] {
+        border-radius: 0.8em;
+        /* background-color: var(--snippet_bg); */
+        line-height: 1em;
+        font-size: 14px !important;
+        /* overflow-y: visible; */
+        position: relative;
+      }
+    </style>
+  </head>
+  <body class="light">
+    <div id="btn_container">
+      <div id="theme-btn" class="far fa-moon"></div>
+    </div>
+    <div class="container">
+      <div class="content-wrapper">
+        <div class="content">
+          <div class="centered-block-x header">
+            <h1>Kennneth's Homework due October 31<sup>st</sup><h1>
+          </div>
+
+          <ol>
+            <li>
+              <div class="asg">
+                <div class="qtn">
+                  <p>
+                    Write fizzbuzz in javascript with the minimal possible
+                    number of characters.
+                  </p>
+                </div>
+                <div class="ans">
+                  <p>
+                    Code golf - JavaScript FizzBuzz in 62 characters: 
+                  <p>
+                  <pre class="language-javascript"><code>
+                    for(i=0;i++&lt;100;console.log(i%5?j||i:j+"Buzz"))j=i%3?"":"Fizz"
+                  </code></pre>
+                  <p>
+                    I got this code from the internets. It's confusing
+                    at first sight,
+                    but really interesting when you analyze it.
+                    Let's put in some whitespace:
+                  </p>
+                  <pre class="language-javascript">
+                    <code>
+                      for (i = 0; i++ &lt; 100; console.log(i % 5 ? j || i : j + "Buzz")) {
+                        j = i % 3 ? "" : "Fizz";
+                      }
+                    </code>
+                  </pre>
+                  <p>
+                    So, the loop iterates from 0 to 99 and increments <code class="mono">i</code>
+                    by 1 in each iteration (<code class="mono">i++</code>). The condition
+                    ensures the loop runs as long as <code class="mono">i</code>
+                    is less than 100. It is surprising how the loop uses
+                    <code class="mono">console.log()</code> with a ternary 
+                    operator inside as the conditional. 
+                    As a last comment, I think
+                    the use of <code class="mono">j</code> to print 
+                    <code class="mono">"FizzBuzz"</code> when the number is 
+                    evenly divisible by 3 and 5 is clever.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="asg">
+                <div class="qtn">
+                  <p>
+                    Show us the Fibonacci numbers in Microsoft Excel; include the ratios
+                    of F<sub>n</sub>/ F<sub>n-1</sub>.  Also calculate
+                     <math>(1+<msqrt>5</msqrt>)/2</math>.  Give a numbered list of
+                    steps used to create the spreadsheet that would be simple enough for
+                    a 5th grader to repeat.  Explain every formula, every cell formatting
+                    choice, and include screenshots
+                  </p>
+                </div>
+                <div class="ans">
+                  <p>Here's a screenshot of the spreadsheet:</p>
+                  <div class="img-container">
+                    <img src="fibo_nums_in_excel.webp" alt="Fibonnacci numbers stored in an excel table" class="img-box">
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="asg">
+                <div class="qtn">
+                  <p>
+                    As we learned in the last homework, the Busy Beaver 6 
+                    Turing Machine writes approximately
+                    this many marks onto the tape:
+                  </p>
+                  <p style="text-align: center; margin: 0.5em; font-size: 30px;" class="equation">
+                    10↑↑15 = 10<sup
+                    >10<sup
+                      >10<sup
+                        >10<sup
+                          >10<sup
+                            >10<sup
+                              >10<sup
+                                >10<sup
+                                  >10<sup
+                                    >10<sup
+                                      >10<sup
+                                        >10<sup
+                                          >10<sup>10<sup>10</sup></sup></sup
+                                        ></sup
+                                      ></sup
+                                    ></sup
+                                  ></sup
+                                ></sup
+                              ></sup
+                            ></sup
+                          ></sup
+                        ></sup
+                      ></sup
+                    ></sup>
+                  </p>
+                  <p>
+                    Show the svg that has the precise number,
+                    and make sure that it displays nicely when the homework
+                    page is very narrow, and also be sure that it looks good
+                    in night mode.
+                  </p>
+                </div>
+                <div class="ans">
+                  <div class="img-container">
+                    <img class="spotlight power-tower" src="BB6_exact_value.svg" alt="Exact number of marks writen by BB6">
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="asg">
+                <div class="qtn">
+                  <p>
+                    Check this page using the
+                    <a href="https://validator.w3.org/">W3C Validator</a>. 
+                    Write down some comments decribing what you 
+                    learned.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="asg">
+                <div class="qtn">
+                  <p>
+                    Check this page using the
+                    <a href="https://wave.webaim.org/">WebAIM Web Accesibility Checker</a>. 
+                    Write down some comments decribing what you 
+                    learned.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="asg">
+                <div class="qtn">
+                  <p>
+                    Speedrun <a href="https://flexboxfroggy.com/">Flexbox Froggy</a>.  Can you complete the whole
+                    thing if you time box it to four hours max?  Once you've finished
+                    write down a few comments/observations.  Did you learn anything new?
+                  </p>
+                </div>
+                <div class="ans">
+                  <p>
+                    I managed to finish Flexbox Froggy in 15 minutes.
+                    The game is really fun and interesting. It helps people to
+                    get used with the <code class="mono">display:flex</code> 
+                    css property. Some levels are really fun and interesting 
+                    because you need to mix some properties to complete them. For
+                    example, there was one level where I had to flip the order of
+                    the froggies with <code class="mono">flex-direction</code> 
+                    (because the were of different colors that matched the water lilies)
+                    and then with <code class="mono">align-items</code> or 
+                    <code class="mono">justify-content</code> I would make
+                    them go at the end with <code class="mono">flex-end</code>.
+                  </p>
+                  <p>
+                    It was a really fun game. The last level was really interesting
+                    because you had to mix not just two properties but four. There
+                    was one property that I had never used before and that is 
+                    <code class="mono">flex-flow</code>. With 
+                    <code class="mono">flex-flow</code> you can set the direction
+                    and the wrapping in just one property. For instance, if you want
+                    to have a row and you want them to wrap in reverse order, you would
+                    normally do <code class="mono">flex-direction: row</code> and
+                    <code class="mono">flex-wrap: wrap-reverse</code>; but you can 
+                    do that with <code class="mono">flex-flow</code> setting it to
+                    <code class="mono">flex-flow: row wrap-reverse</code>.
+                  </p>
+                  <p>
+                    All in all, I really had fun doing completing assignment!
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="asg">
+                <div class="qtn">
+                  <p>
+                    Calculate 1597 ÷ 987 to 15 decimal places using long division
+                    (these are consecutive Fibonacci numbers).  Here is a link 
+                    that will show the first 12 decimal places; just extend the
+                    work a little farther:  
+                    <a href="https://www.calculatorsoup.com/calculators/math/longdivisiondecimals.php?dvsor=987&dvdnd=1597&decimal_places=12&action=solve">
+                      https://www.calculatorsoup.com/calculators/math/longdivisiondecimals.php?dvsor=987&dvdnd=1597&decimal_places=12&action=solve
+                    </a> .  
+                    Comment on your thoughts and observations regarding the HTML / CSS.
+                  </p>
+                </div>
+                <div class="ans"></div>
+              </div>
+            </li>
+            <li>
+              <div class="asg">
+                <div class="qtn">
+                  <p>
+                    Show the Turing Machine instructions for Busy Beaver 5
+                     (aka BB5).  Write a few comments regarding what this
+                      one looks like while running as compared to what 
+                      BB4 / BB3 / BB2 look like while running.
+                  </p>
+                </div>
+                <div class="ans"></div>
+              </div>
+            </li>
+            <li>
+              <div class="asg">
+                <div class="qtn">
+                  <p>
+                    The Mandelbrot set is ... a set.  It is exactly those points
+                    c in the complex plane that "don't spin off to infinity" when
+                    we repeatedly do the transformation z -> z^2 + c and we start
+                    with z=0.  So when we draw or graph or depict this set it's
+                    a black region clustered around 0+0i.  However, when we do
+                    an internet search for "Mandelbrot Set" we find all sorts
+                    of colorful drawings.  Where do these colors come from?
+                    How are they designed?  Explain and illustrate.
+                  </p>
+                </div>
+                <div class="ans">
+                  <div class="img-container">
+                    <a href="./mandelbrot_set_detailed.jpg">
+                      <img class="spotlight" src="mandelbrot_set_small2.webp" alt="¿¿¿???">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="asg">
+                <div class="qtn">
+                  <p>
+                    The book 
+                    <a href="https://www.sitepoint.com/premium/books/css-master-3rd-edition/ ">
+                      CSS Master  
+                    </a> by Tiffany Brown
+                    explains how CSS uses matrices to do transformations.  
+                    Give an overview and some key examples of this concept.
+                  </p>
+                </div>
+                <div class="ans"></div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-c.min.js"
+    integrity="sha512-EWIJI7uQnA8ClViH2dvhYsNA7PHGSwSg03FAfulqpsFiTPHfhdQIvhkg/l3YpuXOXRF2Dk0NYKIl5zemrl1fmA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script>
+      const themeBtn = document.getElementById("theme-btn");
+      themeBtn.onclick = () => {
+        themeBtn.classList.toggle("fa-sun");
+        if (themeBtn.classList.contains("fa-sun")) {
+          document.body.classList.remove("light");
+          document.body.classList.add("dark");
+        } else {
+          document.body.classList.remove("dark");
+          document.body.classList.add("light");
+        }
+      };
+    </script>
+  </body>
+</html>
