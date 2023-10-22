@@ -66,6 +66,8 @@
         --mono: rgb(176, 79, 66);
         --mono_bdr: rgba(176, 79, 66, 0.385);
         --ans: rgb(61 75 41);
+        --matrix: rgb(89, 100, 110);;
+        --matrix_border: rgb(89, 100, 110);
       }
       .dark {
         --bg: rgb(28 23 30);
@@ -76,6 +78,7 @@
         --mono: rgb(198, 176, 178);
         --mono_bdr: rgba(198, 176, 178, 0.508);
         --ans: rgb(194 223 63);
+        --matrix: rgb(164, 185, 139);
       }
 
       body[class*="dark"] img.power-tower {
@@ -96,14 +99,16 @@
         margin-top: 1em;
         margin-bottom: 1em;
       }
-      .img-box {
+      .img-box  {
         min-width: 300px;
         width: 45%;
-        filter: brightness(85%) sepia(43%);
         margin: 10px;
         /* margin: 5px; */
       }
-      body[class*="dark"] .img-box {
+      .filter {
+        filter: brightness(85%) sepia(43%);
+      }
+      body[class*="dark"] .filter {
         filter: contrast(80%) brightness(80%);
       }
       .spotlight {
@@ -117,6 +122,33 @@
         /* font-style: italic; */
         margin-inline: 7px;
         text-shadow: 0px 0px 7.5px rgb(152, 170, 96);
+      }
+
+      .matrix {
+        position: relative;
+        color: var(--matrix);
+        margin: 1em;
+      }
+      .matrix:before,
+      .matrix:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        border: 3px solid var(--matrix_border);
+        width: 0.5em;
+        height: 100%;
+      }
+      .matrix:before {
+        left: -0.5em;
+        border-right: 0px;
+      }
+      .matrix:after {
+        right: -0.5em;
+        border-left: 0px;
+      }
+      .matrix td {
+        padding: 0.2em;
+        text-align: center;
       }
 
       .content-wrapper {
@@ -307,7 +339,7 @@
                     <img
                       src="fibo_nums_in_excel.webp"
                       alt="Fibonnacci numbers stored in an excel table"
-                      class="img-box"
+                      class="img-box filter"
                     />
                   </div>
                   <p>
@@ -315,7 +347,7 @@
                     to the cells as the screenshot below shows:
                   </p>
                   <div class="img-container">
-                    <img src="./fibo_nums_excel1.webp" alt="first three fibo nums" class="img-box">
+                    <img src="./fibo_nums_excel1.webp" alt="first three fibo nums" class="img-box  filter">
                   </div>
                   <p>
                     Then, to add the next on the sequence, we go to the
@@ -335,8 +367,8 @@
                     pasted the function we used to get the two.
                   </p>
                   <div class="img-container">
-                    <img src="./fibo_nums_excel2.webp" alt="first fourth fibo nums" class="img-box">
-                    <img src="./fibo_nums_excel3.webp" alt="fibo sequence until the 100th number" class="img-box">
+                    <img src="./fibo_nums_excel2.webp" alt="first fourth fibo nums" class="img-box filter">
+                    <img src="./fibo_nums_excel3.webp" alt="fibo sequence until the 100th number" class="img-box filter">
                   </div>
                   <p>
                     Once we have the 100th number of the fibonacci sequence,
@@ -353,8 +385,8 @@
                     button that has zeroes and an arrow pointing to the left.
                   </p>
                   <div class="img-container">
-                    <img src="./fibo_nums_excel5.webp" alt="ratio between fibo 3 and 4 function" class="img-box">
-                    <img src="./fibo_nums_excel7.webp" alt="ratio between fibo 3 and 4 with 14 decimals" class="img-box">
+                    <img src="./fibo_nums_excel5.webp" alt="ratio between fibo 3 and 4 function" class="img-box filter">
+                    <img src="./fibo_nums_excel7.webp" alt="ratio between fibo 3 and 4 with 14 decimals" class="img-box filter">
                   </div>
                   <p>
                     After that, we want to do the same for all fibonacci 
@@ -375,8 +407,8 @@
                     we're done.
                   </p>
                   <div class="img-container">
-                    <img src="./fibo_nums_excel9.webp" alt="first fourth fibo nums" class="img-box">
-                    <img src="./fibo_nums_excel10.webp" alt="fibo sequence until the 100th number" class="img-box">
+                    <img src="./fibo_nums_excel9.webp" alt="first fourth fibo nums" class="img-box filter">
+                    <img src="./fibo_nums_excel10.webp" alt="fibo sequence until the 100th number" class="img-box filter">
                   </div>
                 </div>
               </div>
@@ -656,7 +688,85 @@
                     this concept.
                   </p>
                 </div>
-                <div class="ans"></div>
+                <div class="ans">
+                  <p>
+                    One important fact to point out is that the chapter talks
+                    about a CSS property called <code class="mono">transform</code>
+                    and this one can be either a 2d transformation or a 3d.
+                    For the <code class="mono">matrix3d</code> function you 
+                    use a 4x4 matrix, that is, 16 arguments, for a 2d transformation, 3x3 
+                    matrices are used.
+                  </p>
+                  <p>
+                    First, the <code class="mono">matrix</code> function works 
+                    with a 3x3 matrix, takes six parameters distributed like this:
+                  </p>
+                  <table class="matrix">
+                    <tr>
+                      <td>a</td>
+                      <td>b</td>
+                      <td>c</td>
+                    </tr>
+                    <tr>
+                      <td>d</td>
+                      <td>e</td>
+                      <td>f</td>
+                    </tr>
+                    <tr>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>1</td>
+                    </tr>
+                  </table>
+                  <p>
+                    Each transform function takes a matrix. For exmample, 
+                    <code class="mono">scale3d</code> takes a 4x4 matrix 
+                    represented below, where sx, sy, sz are the transformation
+                    performed to the object in each dimension (X, Y, and Z).
+                  </p>
+                  <table class="matrix">
+                    <tr>
+                      <td>sx</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>0</td>
+                      <td>sy</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>sz</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>1</td>
+                    </tr>
+                  </table>
+                  <p>
+                    An important aspect to keep in mind when working
+                    with transformations is that when you have two 
+                    different transformation functions together, that
+                    means you multiply the two matrices corresponding
+                    to the alterations you're aplying to the object. 
+                  </p>
+                  <p>
+                    So, in a nutshell, when you use the CSS property
+                    <code class="mono">transform</code> you are working
+                    with matrices. Specific values in the matrices 
+                    correspond to the various dimensions of the object that
+                    are being changed. If you use two or more different 
+                    transfomation functions, you are multiplying the 
+                    matrices together.
+                  </p>
+                </div>
               </div>
             </li>
             <li>
@@ -664,7 +774,37 @@
                 <div class="qtn">
                   <p>Give us a brief Screeps update and some screenshots.</p>
                 </div>
-                <div class="ans"></div>
+                <div class="ans">
+                  <p>
+                    So, I was killed a couple times during this period of time. 
+                    The first time I was killed was on the summer break, around
+                    June. I tried to remake my whole colony (because another guy
+                    sent a nuker into my room) and it was going really well.
+                    And then things started going down.
+                  </p>
+                  <p>
+                    Around July I was slaughter by a massive horde of 
+                    invader creeps. And just like that, I started again.
+                    Then, a couple weeks ago with my new room and 
+                    my Room Controller in level 3, I got killed again, only this 
+                    time the reason were attacker creeps sent by another player.
+                  </p>
+                  <p>
+                    So, as you can see, a lot has happened lately. I died a lot
+                    of times, but that's not the end of this screeps story.
+                    I started a new colony from zero, and my plan is to create 
+                    at least one room with an unstoppable defense and attack, and 
+                    a system of self-mantaining very fancy. I got my new room yesterday.
+                    I wrote some code and I got the harvesters, upgraders, and builders
+                    running. Here's a screenshot:
+                  </p>
+                  <div class="img-container">
+                    <img src="./screeps_ss1.webp" alt="a screeps room" class="img-box spotlight">
+                  </div>
+                  <p>
+                    More info will be provided later.
+                  </p>
+                </div>
               </div>
             </li>
           </ol>
