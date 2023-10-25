@@ -17,7 +17,7 @@
     <title>HW 2023/10/31</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap");
-      @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap");
 
       #theme-btn {
         font-size: 1.5rem;
@@ -35,11 +35,10 @@
         position: fixed;
         z-index: 10;
       }
-      pre:not([class*="language-"]) code
-      {
-        font-size: 20px  !important;
+      pre:not([class*="language-"]) code {
+        font-size: 20px !important;
         font-weight: bolder;
-        font-family: 'Inconsolata', monospace;
+        font-family: "Inconsolata", monospace;
       }
 
       body.dark {
@@ -66,7 +65,7 @@
         --mono: rgb(176, 79, 66);
         --mono_bdr: rgba(176, 79, 66, 0.385);
         --ans: rgb(61 75 41);
-        --matrix: rgb(89, 100, 110);;
+        --matrix: rgb(89, 100, 110);
         --matrix_border: rgb(89, 100, 110);
       }
       .dark {
@@ -82,7 +81,8 @@
       }
 
       .svg {
-        filter: brightness(0) saturate(100%) invert(40%) sepia(16%) saturate(810%) hue-rotate(41deg) brightness(94%) contrast(85%);
+        filter: brightness(0) saturate(100%) invert(40%) sepia(16%)
+          saturate(810%) hue-rotate(41deg) brightness(94%) contrast(85%);
       }
 
       .img-container {
@@ -95,7 +95,7 @@
         margin-top: 1em;
         margin-bottom: 1em;
       }
-      .img-box  {
+      .img-box {
         min-width: 300px;
         width: 45%;
         margin: 10px;
@@ -271,7 +271,6 @@
     </style>
   </head>
   <body class="light">
-    
     <main>
       <div id="btn_container">
         <div id="theme-btn" class="far fa-moon"></div>
@@ -282,7 +281,7 @@
             <div class="centered-block-x header">
               <h1>Kennneth's Homework due October 31<sup>st</sup></h1>
             </div>
-  
+
             <ol>
               <li>
                 <div class="asg">
@@ -293,16 +292,16 @@
                     </p>
                   </div>
                   <div class="ans">
-                    <p>Code golf - JavaScript FizzBuzz in 62 characters:</p>
-  
+                    <h2>Code golf - JavaScript FizzBuzz in 62 characters:</h2>
+
                     <p></p>
                     <pre class="language-javascript"><code>
                       for(i=0;i++&lt;100;console.log(i%5?j||i:j+"Buzz"))j=i%3?"":"Fizz"
                     </code></pre>
                     <p>
-                      I got this code from the internets. It's confusing at first
-                      sight, but really interesting when you analyze it. Let's put
-                      in some whitespace:
+                      I got this code from the internets. It's confusing at
+                      first sight, but really interesting when you analyze it.
+                      Let's put in some whitespace:
                     </p>
                     <pre class="language-javascript">
                       <code>
@@ -333,15 +332,17 @@
                   <div class="qtn">
                     <p>
                       Show us the Fibonacci numbers in Microsoft Excel; include
-                      the ratios of F<sub>n</sub>/ F<sub>n-1</sub>. Also calculate
-                      <math>(1+<msqrt>5</msqrt>)/2</math>. Give a numbered list of
-                      steps used to create the spreadsheet that would be simple
-                      enough for a 5th grader to repeat. Explain every formula,
-                      every cell formatting choice, and include screenshots
+                      the ratios of F<sub>n</sub>/ F<sub>n-1</sub>. Also
+                      calculate
+                      <math>(1+<msqrt>5</msqrt>)/2</math>. Give a numbered list
+                      of steps used to create the spreadsheet that would be
+                      simple enough for a 5th grader to repeat. Explain every
+                      formula, every cell formatting choice, and include
+                      screenshots
                     </p>
                   </div>
                   <div class="ans">
-                    <p>Here's a screenshot of the spreadsheet:</p>
+                    <h2>Here is what the final result looks like:</h2>
                     <div class="img-container">
                       <img
                         src="fibo_nums_in_excel.webp"
@@ -350,72 +351,113 @@
                       />
                     </div>
                     <p>
-                      First, we need to add the first three fibonacci numbers 
-                      to the cells as the screenshot below shows:
+                      First, we need to add the first three fibonacci numbers to
+                      the cells as the screenshot below shows:
                     </p>
                     <div class="img-container">
-                      <img src="./fibo_nums_excel1.webp" alt="first three fibo nums" class="img-box  filter">
+                      <img
+                        src="./fibo_nums_excel1.webp"
+                        alt="first three fibo nums"
+                        class="img-box filter"
+                      />
                     </div>
                     <p>
-                      Then, to add the next on the sequence, we go to the
-                      cell below and set its value to 
-                      <code class="mono">=SUM(A2:A3)</code>. This is a 
-                      function that sums all the cells that are between 
-                      A2 and A3. Thus, it sums 1 + 1 and gets the result.
-                      We use the previous cell from the current number and 
-                      the cell that is before the previous cell to calculate
-                      the next fibonacci number.
+                      Then, to add the next on the sequence, we go to the cell
+                      below and set its value to
+                      <code class="mono">=SUM(A2:A3)</code>. This is a function
+                      that sums all the cells that are between A2 and A3. Thus,
+                      it sums 1 + 1 and gets the result. We use the previous
+                      cell from the current number and the cell that is before
+                      the previous cell to calculate the next fibonacci number.
                     </p>
                     <p>
-                      After that, we should get a 2 there. Then, we need to
-                      take that cell click on the right lower corner and slide
-                      the mouse until the cell 100 (in this case). And then we'll 
-                      end up with all the sequence. Basically, we just copied and 
-                      pasted the function we used to get the two.
+                      After that, we should get a 2 there. Then, we need to take
+                      that cell click on the right lower corner and slide the
+                      mouse until the cell 100 (in this case). And then we'll
+                      end up with all the sequence. Basically, we just copied
+                      and pasted the function we used to get the two.
                     </p>
                     <div class="img-container">
-                      <img src="./fibo_nums_excel2.webp" alt="first fourth fibo nums" class="img-box filter">
-                      <img src="./fibo_nums_excel3.webp" alt="fibo sequence until the 100th number" class="img-box filter">
+                      <img
+                        src="./fibo_nums_excel2.webp"
+                        alt="first fourth fibo nums"
+                        class="img-box filter"
+                      />
+                      <img
+                        src="./fibo_nums_excel3.webp"
+                        alt="fibo sequence until the 100th number"
+                        class="img-box filter"
+                      />
                     </div>
                     <p>
                       Once we have the 100th number of the fibonacci sequence,
                       we are going to calculate the ratio between the third and
-                      fourth number. To do this, we use another function to 
-                      round up to 14 decimal places and we divide the cells
-                      we want to know the ratio. In this particular case,
-                      the cell's value is 
-                      <code class="mono">=ROUND(A4/A3, 14)</code>. This 
-                      function takes the number to round and then another
-                      number that will correspond to the amount of decimal numbers
-                      we want to show. If the decimals are not showing, we go to 
-                      the ribbon in the top of the app and we press the little 
+                      fourth number. To do this, we use another function to
+                      round up to 14 decimal places and we divide the cells we
+                      want to know the ratio. In this particular case, the
+                      cell's value is
+                      <code class="mono">=ROUND(A4/A3, 14)</code>. This function
+                      takes the number to round and then another number that
+                      will correspond to the amount of decimal numbers we want
+                      to show. If the decimals are not showing, we go to the
+                      ribbon in the top of the app and we press the little
                       button that has zeroes and an arrow pointing to the left.
                     </p>
                     <div class="img-container">
-                      <img src="./fibo_nums_excel5.webp" alt="ratio between fibo 3 and 4 function" class="img-box filter">
-                      <img src="./fibo_nums_excel7.webp" alt="ratio between fibo 3 and 4 with 14 decimals" class="img-box filter">
+                      <img
+                        src="./fibo_nums_excel5.webp"
+                        alt="ratio between fibo 3 and 4 function"
+                        class="img-box filter"
+                      />
+                      <img
+                        src="./fibo_nums_excel7.webp"
+                        alt="ratio between fibo 3 and 4 with 14 decimals"
+                        class="img-box filter"
+                      />
                     </div>
                     <p>
-                      After that, we want to do the same for all fibonacci 
-                      numbers in the sequence. So, we do the same procedure 
-                      that we did to get the sequence. We grab the lower right corner
+                      After that, we want to do the same for all fibonacci
+                      numbers in the sequence. So, we do the same procedure that
+                      we did to get the sequence. We grab the lower right corner
                       of the ratio and then slide it down until the 100th fibo
-                      number. After we have all the ratios, we want to point out 
-                      that the ratios are the same in a specific number, this one being
-                      the 41st number in the sequence.
+                      number. After we have all the ratios, we want to point out
+                      that the ratios are the same in a specific number, this
+                      one being the 41st number in the sequence.
                     </p>
                     <p>
                       So, to do that, we use the <code class="mono">ROUND</code>
-                      function again only this time we use different values.
-                      The ratio stops increasing when it hits
-                      <math>(1+<msqrt>5</msqrt>)/2</math>. So, in cell D41,
-                      we add 
-                      <code class="mono">=ROUND((1+SQRT(5))/2, 14)</code> and 
-                      we're done.
+                      function again only this time we use different values. The
+                      ratio stops increasing when it hits
+                      <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                          <mfrac>
+                            <mrow>
+                              <mo>(</mo>
+                              <mn>1</mn>
+                              <mo>+</mo>
+                              <msqrt>
+                                <mn>5</mn>
+                              </msqrt>
+                              <mo>)</mo>
+                            </mrow>
+                            <mn>2</mn>
+                          </mfrac>
+                        </mrow> 
+                      </math>. So, in cell D41, we add
+                      <code class="mono">=ROUND((1+SQRT(5))/2, 14)</code>
+                      and we're done.
                     </p>
                     <div class="img-container">
-                      <img src="./fibo_nums_excel9.webp" alt="first fourth fibo nums" class="img-box filter">
-                      <img src="./fibo_nums_excel10.webp" alt="fibo sequence until the 100th number" class="img-box filter">
+                      <img
+                        src="./fibo_nums_excel9.webp"
+                        alt="first fourth fibo nums"
+                        class="img-box filter"
+                      />
+                      <img
+                        src="./fibo_nums_excel10.webp"
+                        alt="fibo sequence until the 100th number"
+                        class="img-box filter"
+                      />
                     </div>
                   </div>
                 </div>
@@ -424,8 +466,9 @@
                 <div class="asg">
                   <div class="qtn">
                     <p>
-                      As we learned in the last homework, the Busy Beaver 6 Turing
-                      Machine writes approximately this many marks onto the tape:
+                      As we learned in the last homework, the Busy Beaver 6
+                      Turing Machine writes approximately this many marks onto
+                      the tape:
                     </p>
                     <p
                       style="text-align: center; margin: 0.5em; font-size: 30px"
@@ -458,9 +501,9 @@
                       >
                     </p>
                     <p>
-                      Show the svg that has the precise number, and make sure that
-                      it displays nicely when the homework page is very narrow,
-                      and also be sure that it looks good in night mode.
+                      Show the svg that has the precise number, and make sure
+                      that it displays nicely when the homework page is very
+                      narrow, and also be sure that it looks good in night mode.
                     </p>
                   </div>
                   <div class="ans">
@@ -477,10 +520,8 @@
               <li>
                 <div class="asg">
                   <div class="qtn">
-                    <p>
-                      Try this in a JavaScript console:
-                    </p>
-                      
+                    <p>Try this in a JavaScript console:</p>
+
                     <pre class="language-javascript"><code>
                       function iAmAnObject() {}
                       
@@ -488,29 +529,30 @@
                       console.log(Object.keys(iAmAnObject.name));
                     </code></pre>
                     <p>
-                      So ... is <code class="mono">iAmAnObject</code> an object or a function?
+                      So ... is <code class="mono">iAmAnObject</code> an object
+                      or a function?
                     </p>
                   </div>
                   <div class="ans">
-                    <p>Short Answer: it is a function.</p>
+                    <h2>Short Answer: it is a function.</h2>
                     <p>
-                      The confusion might be origined by the fact that
-                      functions in JavaScript are actually objects. Each function
-                      has a prototype property that is an object. That's why when 
-                      you print <code class="mono">iAmAnObject.name</code> it 
-                      prints a string with the name of the fuunction. To be clear, 
-                      inside the prototype of the function there is a 
-                      <code class="mono">name</code> property
-                      that corresponds to the name of the given function. The second
-                      part 
-                      might seem a little confusing, but it's actually not. 
-                      <code class="mono">Object.keys(iAmAnObject.name)</code> 
-                      tries to access the keys of the name of 
-                      the function, which is a string (<code class="mono">"iAmAnObject"</code>). 
-                      However, since a string doesn't have keys like an object, 
-                      this will not work as expected, instead, it will show 
-                      the index number of the each character in the string. In conclusion, 
-                      (as I mentioned before) <code class="mono">iAmAnObject</code> 
+                      The confusion might be origined by the fact that functions
+                      in JavaScript are actually objects. Each function has a
+                      prototype property that is an object. That's why when you
+                      print <code class="mono">iAmAnObject.name</code> it prints
+                      a string with the name of the fuunction. To be clear,
+                      inside the prototype of the function there is a
+                      <code class="mono">name</code> property that corresponds
+                      to the name of the given function. The second part might
+                      seem a little confusing, but it's actually not.
+                      <code class="mono">Object.keys(iAmAnObject.name)</code>
+                      tries to access the keys of the name of the function,
+                      which is a string (<code class="mono">"iAmAnObject"</code
+                      >). However, since a string doesn't have keys like an
+                      object, this will not work as expected, instead, it will
+                      show the index number of the each character in the string.
+                      In conclusion, (as I mentioned before)
+                      <code class="mono">iAmAnObject</code>
                       is a function.
                     </p>
                   </div>
@@ -528,7 +570,7 @@
                       is often defined like this (expressed with
                       <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span>):
                     </p>
-  
+
                     <pre class="language-latex"><code>
                       e = \lim_{{n \to \infty}} \left(1 + \frac{1}{n}\right)^n
                     </code></pre>
@@ -538,7 +580,11 @@
                   </div>
                   <div class="ans">
                     <div class="img-container">
-                      <img src="./euler_number.svg" alt="euler constant" class="svg img-box">
+                      <img
+                        src="./euler_number.svg"
+                        alt="euler constant"
+                        class="svg img-box"
+                      />
                     </div>
                   </div>
                 </div>
@@ -548,8 +594,8 @@
                   <div class="qtn">
                     <p>
                       Check this page using the
-                      <a href="https://validator.w3.org/">W3C Validator</a>. Write
-                      down some comments decribing what you learned.
+                      <a href="https://validator.w3.org/">W3C Validator</a>.
+                      Write down some comments decribing what you learned.
                     </p>
                   </div>
                 </div>
@@ -566,57 +612,77 @@
                   </div>
                   <div class="ans">
                     <p>
-                      Well, as you can see in the screenshot below, 
-                      I have no errors on the webpage (so far), although
-                      there are a couple issues for which the websites is
-                      complaining.
+                      Well, as you can see in the screenshot below, I have no
+                      errors on the webpage (so far), although there are a
+                      couple issues for which the websites is complaining.
                     </p>
                     <div class="img-container">
-                      <img src="./accesibility_checker_results.webp" alt="results of the WebAIM Accesibility Checker" class="img-box spotlight">
+                      <img
+                        src="./accesibility_checker_results.webp"
+                        alt="results of the WebAIM Accesibility Checker"
+                        class="img-box spotlight"
+                      />
                     </div>
                     <p>
-                      But, if we dive in into the 51 contrast errors,
-                      we'll discover that these are actually caused by the 
-                      mono font on this document. I think that is actually 
-                      not a problem and the contrast is good enough so I 
-                      left it like that.
+                      But, if we dive in into the 51 contrast errors, we'll
+                      discover that these are actually caused by the mono font
+                      on this document. I think that is actually not a problem
+                      and the contrast is good enough so I left it like that.
                     </p>
                     <div class="img-container">
-                      <img src="./accesibility_checker_contrast_errors.webp" alt="contrast errors detected by the WebAIM Accesibility Checker" class="img-box spotlight">
+                      <img
+                        src="./accesibility_checker_contrast_errors.webp"
+                        alt="contrast errors detected by the WebAIM Accesibility Checker"
+                        class="img-box spotlight"
+                      />
                     </div>
                     <p>
                       There more categories but the most important that I
-                      checked was the Alerts category. I had 6 alerts, but 
-                      the first one was the only one I considered to be 
-                      interesting and worth investigating. The first alert 
-                      said that I had "No Page Regions". I didn't understand
-                      at first, but after I did a google search for "ARIA" and
-                      "ARIA landmarks", I got pretty good information.
+                      checked was the Alerts category. I had 6 alerts, but the
+                      first one was the only one I considered to be interesting
+                      and worth investigating. The first alert said that I had
+                      "No Page Regions". I didn't understand at first, but after
+                      I did a google search for "ARIA" and "ARIA landmarks", I
+                      got pretty good information.
                     </p>
                     <div class="img-container">
-                      <img src="./accesibility_checker_alerts.webp" alt="Alerts detected by the WebAIM Accesibility Checker" class="img-box spotlight">
+                      <img
+                        src="./accesibility_checker_alerts.webp"
+                        alt="Alerts detected by the WebAIM Accesibility Checker"
+                        class="img-box spotlight"
+                      />
                     </div>
                     <p>
                       Apparently, ARIA "is a set of roles and attributes that
-                      define ways to make web content and apps more accesible to 
-                      people with disabilities" (from 
-                      <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">MDN web docs: ARIA</a> 
-                      ). It stands for Accessible Rich Internet Applications. But
-                      the important thing here are regions or landmarks because the
-                      checker complianed that "No page regions or ARIA landmarks were found".
-                      So, I looked for those and I discovered that page regions and/or 
-                      landmarks: "provide a powerful way to identify the organization
-                       and structure of a web page" (according to 
-                      <a href="https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/">W3C: Landmark Regions</a> 
-                       ). 
+                      define ways to make web content and apps more accesible to
+                      people with disabilities" (from
+                      <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA"
+                        >MDN web docs: ARIA</a
+                      >
+                      ). It stands for Accessible Rich Internet Applications.
+                      But the important thing here are regions or landmarks
+                      because the checker complianed that "No page regions or
+                      ARIA landmarks were found". So, I looked for those and I
+                      discovered that page regions and/or landmarks: "provide a
+                      powerful way to identify the organization and structure of
+                      a web page" (according to
+                      <a
+                        href="https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/"
+                        >W3C: Landmark Regions</a
+                      >
+                      ).
                     </p>
                     <p>
-                      To fix that alert, all I did was to add a 
-                      <code class="mono">main</code> tag in the 
-                      body.
+                      To fix that alert, all I did was to add a
+                      <code class="mono">main</code> tag in the body.
                     </p>
                     <div class="img-container">
-                      <img src="./accesibility_checker_alerts_fixed.webp" alt="Alerts detected by the WebAIM Accesibility Checker. ARIA alert fixed" class="img-box spotlight">
+                      <img
+                        src="./accesibility_checker_alerts_fixed.webp"
+                        alt="Alerts detected by the WebAIM Accesibility Checker. ARIA alert fixed"
+                        class="img-box spotlight"
+                      />
                     </div>
                     <p>
                       The other alerts are a little bit silly. Just suggestions
@@ -632,9 +698,9 @@
                   <div class="qtn">
                     <p>
                       Speedrun
-                      <a href="https://flexboxfroggy.com/">Flexbox Froggy</a>. Can
-                      you complete the whole thing if you time box it to four
-                      hours max? Once you've finished write down a few
+                      <a href="https://flexboxfroggy.com/">Flexbox Froggy</a>.
+                      Can you complete the whole thing if you time box it to
+                      four hours max? Once you've finished write down a few
                       comments/observations. Did you learn anything new?
                     </p>
                   </div>
@@ -643,15 +709,16 @@
                       I managed to finish Flexbox Froggy in 15 minutes. The game
                       is really fun and interesting. It helps people to get used
                       with the <code class="mono">display:flex</code> css
-                      property. Some levels are really fun and interesting because
-                      you need to mix some properties to complete them. For
-                      example, there was one level where I had to flip the order
-                      of the froggies with
+                      property. Some levels are really fun and interesting
+                      because you need to mix some properties to complete them.
+                      For example, there was one level where I had to flip the
+                      order of the froggies with
                       <code class="mono">flex-direction</code> (because the were
-                      of different colors that matched the water lilies) and then
-                      with <code class="mono">align-items</code> or
-                      <code class="mono">justify-content</code> I would make them
-                      go at the end with <code class="mono">flex-end</code>.
+                      of different colors that matched the water lilies) and
+                      then with <code class="mono">align-items</code> or
+                      <code class="mono">justify-content</code> I would make
+                      them go at the end with
+                      <code class="mono">flex-end</code>.
                     </p>
                     <p>
                       It was a really fun game. The last level was really
@@ -665,8 +732,9 @@
                       wrap in reverse order, you would normally do
                       <code class="mono">flex-direction: row</code> and
                       <code class="mono">flex-wrap: wrap-reverse</code>; but you
-                      can do that with <code class="mono">flex-flow</code> setting
-                      it to <code class="mono">flex-flow: row wrap-reverse</code>.
+                      can do that with
+                      <code class="mono">flex-flow</code> setting it to
+                      <code class="mono">flex-flow: row wrap-reverse</code>.
                     </p>
                     <p>
                       All in all, I really had fun doing completing assignment!
@@ -679,8 +747,8 @@
                   <div class="qtn">
                     <p>
                       Calculate 1597 ÷ 987 to 15 decimal places using long
-                      division (these are consecutive Fibonacci numbers). Here is
-                      a link that will show the first 12 decimal places; just
+                      division (these are consecutive Fibonacci numbers). Here
+                      is a link that will show the first 12 decimal places; just
                       extend the work a little farther:
                       <a
                         href="https://www.calculatorsoup.com/calculators/math/longdivisiondecimals.php?dvsor=987&dvdnd=1597&decimal_places=12&action=solve"
@@ -698,10 +766,10 @@
                 <div class="asg">
                   <div class="qtn">
                     <p>
-                      Show the Turing Machine instructions for Busy Beaver 5 (aka
-                      BB5). Write a few comments regarding what this one looks
-                      like while running as compared to what BB4 / BB3 / BB2 look
-                      like while running.
+                      Show the Turing Machine instructions for Busy Beaver 5
+                      (aka BB5). Write a few comments regarding what this one
+                      looks like while running as compared to what BB4 / BB3 /
+                      BB2 look like while running.
                     </p>
                   </div>
                   <div class="ans"></div>
@@ -711,14 +779,15 @@
                 <div class="asg">
                   <div class="qtn">
                     <p>
-                      The Mandelbrot set is ... a set. It is exactly those points
-                      c in the complex plane that "don't spin off to infinity"
-                      when we repeatedly do the transformation z -> z^2 + c and we
-                      start with z=0. So when we draw or graph or depict this set
-                      it's a black region clustered around 0+0i. However, when we
-                      do an internet search for "Mandelbrot Set" we find all sorts
-                      of colorful drawings. Where do these colors come from? How
-                      are they designed? Explain and illustrate.
+                      The Mandelbrot set is ... a set. It is exactly those
+                      points c in the complex plane that "don't spin off to
+                      infinity" when we repeatedly do the transformation z ->
+                      z^2 + c and we start with z=0. So when we draw or graph or
+                      depict this set it's a black region clustered around 0+0i.
+                      However, when we do an internet search for "Mandelbrot
+                      Set" we find all sorts of colorful drawings. Where do
+                      these colors come from? How are they designed? Explain and
+                      illustrate.
                     </p>
                     <div class="img-container">
                       <a href="./mandelbrot_set_detailed.jpg">
@@ -734,12 +803,14 @@
                     <p>
                       After I saw lots, and lots of mandelbrot set pictures with
                       different colors, patterns, and others, I have developed a
-                      hypothesis: The different colors (blue, black, orange, etc)
-                      are generated depending on how fast the transformation increments
-                      or goes to infinity. For instance, the blue would be produced by points
-                      that shoot off to infinity, the black would come from points that
-                      does not shoot off to infinity, and the orange or yellow correspond
-                      to the numbers that increase but do not go to infinity.
+                      hypothesis: The different colors (blue, black, orange,
+                      etc) are generated depending on how fast the
+                      transformation increments or goes to infinity. For
+                      instance, the blue would be produced by points that shoot
+                      off to infinity, the black would come from points that
+                      does not shoot off to infinity, and the orange or yellow
+                      correspond to the numbers that increase but do not go to
+                      infinity.
                     </p>
                   </div>
                 </div>
@@ -762,15 +833,17 @@
                   <div class="ans">
                     <p>
                       One important fact to point out is that the chapter talks
-                      about a CSS property called <code class="mono">transform</code>
-                      and this one can be either a 2d transformation or a 3d.
-                      For the <code class="mono">matrix3d</code> function you 
-                      use a 4x4 matrix, that is, 16 arguments, for a 2d transformation, 3x3 
-                      matrices are used.
+                      about a CSS property called
+                      <code class="mono">transform</code> and this one can be
+                      either a 2d transformation or a 3d. For the
+                      <code class="mono">matrix3d</code> function you use a 4x4
+                      matrix, that is, 16 arguments, for a 2d transformation,
+                      3x3 matrices are used.
                     </p>
                     <p>
-                      First, the <code class="mono">matrix</code> function works 
-                      with a 3x3 matrix, takes six parameters distributed like this:
+                      First, the <code class="mono">matrix</code> function works
+                      with a 3x3 matrix, takes six parameters distributed like
+                      this:
                     </p>
                     <table class="matrix">
                       <tr>
@@ -790,8 +863,8 @@
                       </tr>
                     </table>
                     <p>
-                      Each transform function takes a matrix. For exmample, 
-                      <code class="mono">scale3d</code> takes a 4x4 matrix 
+                      Each transform function takes a matrix. For exmample,
+                      <code class="mono">scale3d</code> takes a 4x4 matrix
                       represented below, where sx, sy, sz are the transformation
                       performed to the object in each dimension (X, Y, and Z).
                     </p>
@@ -822,20 +895,19 @@
                       </tr>
                     </table>
                     <p>
-                      An important aspect to keep in mind when working
-                      with transformations is that when you have two 
-                      different transformation functions together, that
-                      means you multiply the two matrices corresponding
-                      to the alterations you're aplying to the object. 
+                      An important aspect to keep in mind when working with
+                      transformations is that when you have two different
+                      transformation functions together, that means you multiply
+                      the two matrices corresponding to the alterations you're
+                      aplying to the object.
                     </p>
                     <p>
                       So, in a nutshell, when you use the CSS property
-                      <code class="mono">transform</code> you are working
-                      with matrices. Specific values in the matrices 
-                      correspond to the various dimensions of the object that
-                      are being changed. If you use two or more different 
-                      transfomation functions, you are multiplying the 
-                      matrices together.
+                      <code class="mono">transform</code> you are working with
+                      matrices. Specific values in the matrices correspond to
+                      the various dimensions of the object that are being
+                      changed. If you use two or more different transfomation
+                      functions, you are multiplying the matrices together.
                     </p>
                   </div>
                 </div>
@@ -847,34 +919,37 @@
                   </div>
                   <div class="ans">
                     <p>
-                      So, I was killed a couple times during this period of time. 
-                      The first time I was killed was on the summer break, around
-                      June. I tried to remake my whole colony (because another guy
-                      sent a nuker into my room) and it was going really well.
-                      And then things started going down.
+                      So, I was killed a couple times during this period of
+                      time. The first time I was killed was on the summer break,
+                      around June. I tried to remake my whole colony (because
+                      another guy sent a nuker into my room) and it was going
+                      really well. And then things started going down.
                     </p>
                     <p>
-                      Around July I was slaughter by a massive horde of 
-                      invader creeps. And just like that, I started again.
-                      Then, a couple weeks ago with my new room and 
-                      my Room Controller in level 3, I got killed again, only this 
-                      time the reason were attacker creeps sent by another player.
+                      Around July I was slaughter by a massive horde of invader
+                      creeps. And just like that, I started again. Then, a
+                      couple weeks ago with my new room and my Room Controller
+                      in level 3, I got killed again, only this time the reason
+                      were attacker creeps sent by another player.
                     </p>
                     <p>
-                      So, as you can see, a lot has happened lately. I died a lot
-                      of times, but that's not the end of this screeps story.
-                      I started a new colony from zero, and my plan is to create 
-                      at least one room with an unstoppable defense and attack, and 
-                      a system of self-mantaining very fancy. I got my new room yesterday.
-                      I wrote some code and I got the harvesters, upgraders, and builders
-                      running. Here's a screenshot:
+                      So, as you can see, a lot has happened lately. I died a
+                      lot of times, but that's not the end of this screeps
+                      story. I started a new colony from zero, and my plan is to
+                      create at least one room with an unstoppable defense and
+                      attack, and a system of self-mantaining very fancy. I got
+                      my new room yesterday. I wrote some code and I got the
+                      harvesters, upgraders, and builders running. Here's a
+                      screenshot:
                     </p>
                     <div class="img-container">
-                      <img src="./screeps_ss1.webp" alt="a screeps room" class="img-box spotlight">
+                      <img
+                        src="./screeps_ss1.webp"
+                        alt="a screeps room"
+                        class="img-box spotlight"
+                      />
                     </div>
-                    <p>
-                      More info will be provided later.
-                    </p>
+                    <p>More info will be provided later.</p>
                   </div>
                 </div>
               </li>
@@ -891,7 +966,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-latex.min.js" integrity="sha512-05ks1BpsV13hwvXwVHqPIXTdbxyMfC11RkXr+sxoyYc1wanbpgjqJvjWFbhtTghdyJkhgq95a8SKo83MnvjZog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-latex.min.js"
+      integrity="sha512-05ks1BpsV13hwvXwVHqPIXTdbxyMfC11RkXr+sxoyYc1wanbpgjqJvjWFbhtTghdyJkhgq95a8SKo83MnvjZog=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
     <script>
       const themeBtn = document.getElementById("theme-btn");
