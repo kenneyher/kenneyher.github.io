@@ -334,7 +334,23 @@
                       Show us the Fibonacci numbers in Microsoft Excel; include
                       the ratios of F<sub>n</sub>/ F<sub>n-1</sub>. Also
                       calculate
-                      <math>(1+<msqrt>5</msqrt>)/2</math>. Give a numbered list
+                      <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                          <mfrac>
+                            <mrow>
+                              <mo>(</mo>
+                              <mn>1</mn>
+                              <mo>+</mo>
+                              <msqrt>
+                                <mn>5</mn>
+                              </msqrt>
+                              <mo>)</mo>
+                            </mrow>
+                            <mn>2</mn>
+                          </mfrac>
+                        </mrow> 
+                      </math>
+                      . Give a numbered list
                       of steps used to create the spreadsheet that would be
                       simple enough for a 5th grader to repeat. Explain every
                       formula, every cell formatting choice, and include
@@ -443,7 +459,7 @@
                             <mn>2</mn>
                           </mfrac>
                         </mrow> 
-                      </math>. So, in cell D41, we add
+                        </math>. So, in cell D41, we add
                       <code class="mono">=ROUND((1+SQRT(5))/2, 14)</code>
                       and we're done.
                     </p>
