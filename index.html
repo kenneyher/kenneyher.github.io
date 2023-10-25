@@ -81,12 +81,8 @@
         --matrix: rgb(164, 185, 139);
       }
 
-      body[class*="dark"] img.power-tower {
-        filter: invert(100%) sepia(2%) saturate(412%) hue-rotate(239deg)
-          brightness(116%) contrast(87%);
-      }
-      img.power-tower {
-        filter: none;
+      .svg {
+        filter: brightness(0) saturate(100%) invert(40%) sepia(16%) saturate(810%) hue-rotate(41deg) brightness(94%) contrast(85%);
       }
 
       .img-container {
@@ -120,7 +116,7 @@
       }
       .equation,
       math {
-        color: rgb(131, 140, 101);
+        color: #606e49;
         font-family: "Times New Roman", Times, serif;
         /* font-style: italic; */
         margin-inline: 7px;
@@ -542,7 +538,7 @@
                   </div>
                   <div class="ans">
                     <div class="img-container">
-                      <img src="./euler_number.svg" alt="euler constant" class="img-box">
+                      <img src="./euler_number.svg" alt="euler constant" class="svg img-box">
                     </div>
                   </div>
                 </div>
