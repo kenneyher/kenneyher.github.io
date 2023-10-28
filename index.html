@@ -880,6 +880,30 @@
                     </p>
                     <table class="division">
                       <tr>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;"></td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">ϕ</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">=</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">0</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">0</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">0</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;" class="d-dot">1.</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">6</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">1</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">8</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">0</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">3</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">4</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">4</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">4</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">7</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">8</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">2</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">1</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">6</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">8</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">1</td>
+                      </tr>
+                      <tr>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -1853,7 +1877,49 @@
                       BB2 look like while running.
                     </p>
                   </div>
-                  <div class="ans"></div>
+                  <div class="ans">
+                    <p>
+                      I took BB5 code and iserted into the Turing Machine Simulator.
+                      I watched it at least 10 times and I also rewatched BB2, BB3,
+                      and BB4 and recorded the steps that BB2 and BB3 make. In the case 
+                      of BB4 I only recorded 20 steps but I was able to find some
+                      similarities between BB5 and all of these.
+                    </p>
+                    <p>
+                      The similarities are not whole steps between them or 
+                      something like that, but more like steps in which the 
+                      states, symbols, and movements are the same. First of 
+                      all, there are no similarities between BB5, BB2 and BB3. 
+                      I found nothing in common between them. Although, BB4 shares 
+                      some rules with BB5. 
+                    </p>
+                    <p>
+                      The first rule they share is 
+                      <code class="mono">q2, _ -> q3, x, ></code>. This rule makes
+                      precense in step 13 in BB5 and in step 3 in BB4. And it 
+                      repeats a few times after in BB5 (although not following the 
+                      same pattern). The next rules happen to be one after another,
+                      the rules are: 
+                    </p>
+                    <ul>
+                      <li><code class="mono">q3, x -> q0, x, &lt;</code></li>
+                      <li><code class="mono">q0, _ -> q1, x, &gt;</code></li>
+                      <li><code class="mono">q1, x -> q1, x, &gt;</code></li>
+                      <li><code class="mono">q1, _ -> q2, x, &gt;</code></li>
+                    </ul>
+                    <p>
+                      These rules happen to be in the following order:
+                      <code class="mono">q3 -> q0</code>, <code class="mono">q0 -> q1</code>,
+                      <code class="mono">q1 -> q1</code> (this rule repeats for 4 steps),
+                      and finally, <code class="mono">q1 -> q2</code>. 
+                    </p>
+                    <p>
+                      These were the only steps I identified. They are
+                      repeated differently while BB5 is running, but 
+                      I coudn't tell if there is some sort of "connection"
+                      between BB2 and BB3.
+                    </p>
+                  </div>
                 </div>
               </li>
               <li>
