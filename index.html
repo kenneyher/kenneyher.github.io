@@ -63,7 +63,7 @@
         --qtn_txt: rgb(104 44 28);
         /* --mono: #b04f42; */
         --mono: #48272d;
-        --math: rgb(39, 64, 44);
+        --math: #27402c;
         --mono_bdr: rgba(118, 60, 53, 0.385);
         --mono_bg: rgba(165, 140, 137, 0.385);
         --ans: rgb(61 75 41);
@@ -81,7 +81,7 @@
         --mono_bg: rgba(119, 106, 107, 0.508);
         --ans: rgb(194 223 63);
         --matrix: rgb(164, 185, 139);
-        --math: rgb(194 223 63);
+        --math: #c2df3f;
       }
 
       h2 {
@@ -89,8 +89,14 @@
       }
 
       .svg {
-        filter: brightness(0) saturate(100%) invert(40%) sepia(16%)
-          saturate(810%) hue-rotate(41deg) brightness(94%) contrast(85%);
+        filter: brightness(0) saturate(100%) invert(18%) sepia(21%) saturate(841%) hue-rotate(80deg) brightness(100%) contrast(89%);
+      }
+      body[class*="dark"] .svg {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(63%) saturate(2308%) hue-rotate(12deg) brightness(98%) contrast(78%);
+      }
+
+      #euler {
+        width: 30%;
       }
 
       .img-container {
@@ -245,6 +251,15 @@
         /* overflow-y: visible; */
         position: relative;
       }
+      pre.mono {
+        font-size: 18px;
+        border: solid 2px var(--mono_bdr);
+        color: var(--mono);
+        white-space: pre-line;
+        font-weight: bolder;
+        padding: 10px;
+        border-radius: 6px;
+      }
 
       .tex sub,
       .latex sub,
@@ -312,7 +327,7 @@
       }
     </style>
   </head>
-  <body class="light">
+  <body class="dark">
     <main>
       <div id="btn_container">
         <div id="theme-btn" class="far fa-moon"></div>
@@ -642,6 +657,7 @@
                         src="./euler_number.svg"
                         alt="euler constant"
                         class="img-box svg"
+                        id="euler"
                       >
                     </div>
                     <p>
@@ -861,7 +877,9 @@
                   <div class="qtn">
                     <p>
                       Calculate 1597 ÷ 987 to 15 decimal places using long
-                      division (these are consecutive Fibonacci numbers). Here
+                      division (these are consecutive Fibonacci numbers). 
+                      This is an approximation of the Golden Ratio, whose
+                      symbol is ϕ. Here
                       is a link that will show the first 12 decimal places; just
                       extend the work a little farther:
                       <a
@@ -876,7 +894,9 @@
                   <div class="ans">
                     <p>
                       Here's how I implemented the division with a 
-                      <code class="mono">table</code>:
+                      <code class="mono">table</code>. The top row
+                      shows the actual value of ϕ so that we can 
+                      compare to this approximation:
                     </p>
                     <table class="division">
                       <tr>
@@ -892,16 +912,16 @@
                         <td style="border-bottom: solid 3px; border-top: solid 3px;">8</td>
                         <td style="border-bottom: solid 3px; border-top: solid 3px;">0</td>
                         <td style="border-bottom: solid 3px; border-top: solid 3px;">3</td>
-                        <td style="border-bottom: solid 3px; border-top: solid 3px;">4</td>
-                        <td style="border-bottom: solid 3px; border-top: solid 3px;">4</td>
-                        <td style="border-bottom: solid 3px; border-top: solid 3px;">4</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">3</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">9</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">8</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">8</td>
                         <td style="border-bottom: solid 3px; border-top: solid 3px;">7</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">4</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">9</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">4</td>
                         <td style="border-bottom: solid 3px; border-top: solid 3px;">8</td>
-                        <td style="border-bottom: solid 3px; border-top: solid 3px;">2</td>
-                        <td style="border-bottom: solid 3px; border-top: solid 3px;">1</td>
-                        <td style="border-bottom: solid 3px; border-top: solid 3px;">6</td>
-                        <td style="border-bottom: solid 3px; border-top: solid 3px;">8</td>
-                        <td style="border-bottom: solid 3px; border-top: solid 3px;">1</td>
+                        <td style="border-bottom: solid 3px; border-top: solid 3px;">4</td>
                       </tr>
                       <tr>
                         <td></td>
@@ -1864,6 +1884,9 @@
                         <td>3</td>
                       </tr>
                     </table>
+                    <p>
+                      Here's what it looks like using MathML.
+                    </p>
                   </div>
                 </div>
               </li>
@@ -1879,7 +1902,7 @@
                   </div>
                   <div class="ans">
                     <p>
-                      I took BB5 code and iserted into the Turing Machine Simulator.
+                      I took BB5 code and iserted it into the Turing Machine Simulator.
                       I watched it at least 10 times and I also rewatched BB2, BB3,
                       and BB4 and recorded the steps that BB2 and BB3 make. In the case 
                       of BB4 I only recorded 20 steps but I was able to find some
@@ -1895,8 +1918,8 @@
                     </p>
                     <p>
                       The first rule they share is 
-                      <code class="mono">q2, _ -> q3, x, ></code>. This rule makes
-                      precense in step 13 in BB5 and in step 3 in BB4. And it 
+                      <code class="mono">q2, _ -> q3, x, ></code>. This rule 
+                      appears for the first time in step 13 in BB5 and in step 3 in BB4. And it 
                       repeats a few times after in BB5 (although not following the 
                       same pattern). The next rules happen to be one after another,
                       the rules are: 
@@ -1917,8 +1940,46 @@
                       These were the only steps I identified. They are
                       repeated differently while BB5 is running, but 
                       I coudn't tell if there is some sort of "connection"
-                      between BB2 and BB3.
+                      between BB5 and BB2 or BB3.
                     </p>
+
+                    <pre class="mono">
+                      //-------CONFIGURATION
+                      name: bb5
+                      init: q0
+                      accept: qHalt
+
+                      //-------DELTA FUNCTION:
+                      q0, _
+                      q1, x, >
+
+                      q1, _
+                      q2, x, >
+
+                      q2, _
+                      q3, x, >
+
+                      q3, _
+                      q0, x, &lt;
+
+                      q4, _
+                      qHalt, x, >
+
+                      q0, x
+                      q2, x, &lt;
+
+                      q1, x
+                      q1, x, >
+
+                      q2, x
+                      q4, _, &lt;
+
+                      q3, x
+                      q3, x, &lt;
+
+                      q4, x
+                      q0, _, &lt;
+                    </pre>
                   </div>
                 </div>
               </li>
@@ -1958,6 +2019,16 @@
                       does not shoot off to infinity, and the orange or yellow
                       correspond to the numbers that increase but do not go to
                       infinity.
+                    </p>
+                    <p>
+                      When I am drawing the 900 by 900 canvas, I have to decide
+                      wether a pixel will be black or white. The pixel will be
+                      black if after 30 transformation, its magnitude does not 
+                      go above 2. So what I can do is check the iterations of the
+                      pixel and if it goes above 2 after 10 iterations I can set it 
+                      to blue, if it goes above 2 after 20 iterations I can set it 
+                      to orange, if it goes above 2 after 25 iterations I can set it
+                      to yellow, and so on.
                     </p>
                   </div>
                 </div>
