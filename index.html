@@ -68,13 +68,13 @@
         --mono_bg: rgba(165, 140, 137, 0.385);
         --ans: rgb(61 75 41);
         --matrix: rgb(89, 100, 110);
-        --matrix_border: rgb(89, 100, 110);
+        --link: rgb(48, 82, 72);
       }
       .dark {
         --bg: rgb(28 23 30);
         --container_bg: rgb(56 33 53);
         --btn_color: red;
-        --txt: rgb(195 135 80);
+        --txt: rgb(241, 175, 114);
         --qtn_bg: rgb(57, 44, 68);
         --mono: rgb(198, 176, 178);
         --mono_bdr: rgba(198, 176, 178, 0.508);
@@ -82,6 +82,12 @@
         --ans: rgb(194 223 63);
         --matrix: rgb(164, 185, 139);
         --math: #c2df3f;
+        --link: rgb(255, 245, 98);
+      }
+
+      a
+      {
+        color: var(--link);
       }
 
       h2 {
@@ -148,7 +154,7 @@
         content: "";
         position: absolute;
         top: 0;
-        border: 3px solid var(--matrix_border);
+        border: 3px solid var(--matrix);
         width: 0.5em;
         height: 100%;
       }
@@ -539,8 +545,8 @@
                 <div class="asg">
                   <div class="qtn">
                     <p>
-                      As we learned in the last homework, the Busy Beaver 6
-                      Turing Machine writes approximately this many marks onto
+                      As we learned in the last homework, the Busy Beaver 6 Turing Machine
+                       (BB6) writes approximately this many marks onto
                       the tape:
                     </p>
                     <p
@@ -609,7 +615,7 @@
                   <div class="ans">
                     <h2>Short Answer: it is a function.</h2>
                     <p>
-                      The confusion might be origined by the fact that functions
+                      The confusion might originate with the fact that functions
                       in JavaScript are actually objects. Each function has a
                       prototype property that is an object. That's why when you
                       print <code class="mono">iAmAnObject.name</code> it prints
@@ -623,7 +629,7 @@
                       which is a string (<code class="mono">"iAmAnObject"</code
                       >). However, since a string doesn't have keys like an
                       object, this will not work as expected, instead, it will
-                      show the index number of the each character in the string.
+                      show the index number of each character in the string.
                       In conclusion, (as I mentioned before)
                       <code class="mono">iAmAnObject</code>
                       is a function.
@@ -674,8 +680,8 @@
                       Basically, this function runs a loop until 
                       <code class="mono">n</code> reaches <code class="mono">limit</code>,
                       with the last one being a parameter you give. Each time
-                      the loop runs, the program calculates euler with the 
-                      current value of <code class="mono">n</code>. 
+                      the loop runs,the program calculates the Euler number
+                       with the current value of <code class="mono">n</code>. 
                       I added a <code class="mono">console.log()</code> to 
                       see the progress of this function and the value at each
                       iteration. Here are some screenshots that I took when I 
@@ -688,7 +694,7 @@
                     </div>
                     <p>
                       For bigger numbers, I used an <code class="mono">if</code>
-                      statement to print the results each time the that
+                      statement to print the results each time the 
                       n was divisible by 10 (every 10 iterations).
                     </p>
                     <p>
@@ -720,7 +726,7 @@
                       I managed to get no errors, warnings or alerts in this validator.
                       I just had 2 or 3 erros at the beginning. They were missing 
                       ending tags for an <code class="mono">h1</code>. Most of the 
-                      other results were alerts/warnings. The mayority of them were
+                      other results were alerts/warnings. The majority of them were
                       about the <code class="mono">img</code> tag. It was complaining
                       that this tag didn't need an ending slash (<code class="mono">/</code>).
                       The other ones were similar but this time with the 
@@ -818,8 +824,24 @@
                       The other alerts are a little bit silly. Just suggestions
                       that some text should be headers and a wrong use of tables
                       (to create matrices). But those were some important points
-                      that I recieved from the Accesibility Checker.
+                      that I recieved from the Accesibility Checker. I had
+                      some contrast issues originated from the colors of the 
+                      mono text that I solved by making the color darker, same 
+                      happened to the math text. Once I did that, the webpage 
+                      was clean (except for the header suggestion alerts).
                     </p>
+                    <p>
+                      On the other side, the dark version of the website had 
+                      more contrast issues that I had to solve by making the 
+                      font a bit brighter.
+                    </p>
+                    <div class="img-container">
+                      <img
+                        src="./accesibility_checker_alerts_dark.webp"
+                        alt="Alerts detected of the dark version of the webpage by the WebAIM Accesibility Checker."
+                        class="img-box spotlight"
+                      >
+                    </div>
                   </div>
                 </div>
               </li>
@@ -1902,7 +1924,7 @@
                   </div>
                   <div class="ans">
                     <p>
-                      I took BB5 code and iserted it into the Turing Machine Simulator.
+                      I took BB5 code and inserted it into the Turing Machine Simulator.
                       I watched it at least 10 times and I also rewatched BB2, BB3,
                       and BB4 and recorded the steps that BB2 and BB3 make. In the case 
                       of BB4 I only recorded 20 steps but I was able to find some
@@ -2021,14 +2043,17 @@
                       infinity.
                     </p>
                     <p>
-                      When I am drawing the 900 by 900 canvas, I have to decide
-                      wether a pixel will be black or white. The pixel will be
-                      black if after 30 transformation, its magnitude does not 
-                      go above 2. So what I can do is check the iterations of the
-                      pixel and if it goes above 2 after 10 iterations I can set it 
-                      to blue, if it goes above 2 after 20 iterations I can set it 
-                      to orange, if it goes above 2 after 25 iterations I can set it
-                      to yellow, and so on.
+                      When I create the 900 by 900 canvas, to decide if each
+                      pixel will be black or colorful, I can follow a specific 
+                      rule. That rule goes something like this: 
+                      if, after 30 transformations, a pixel's magnitude doesn't 
+                      exceed 2, it stays black. But here's where it gets 
+                      interesting. We introduce colors based on the pixel's 
+                      journey. At 10 iterations, it turns a vibrant blue. Hit
+                      20 iterations, and it becomes a lively orange. And when
+                      the pixel reaches 25 iterations, it shines bright in 
+                      yellow. This blend of black and colors adds an artistic
+                      touch to our canvas, telling a beautiful mathematical story.
                     </p>
                   </div>
                 </div>
@@ -2055,7 +2080,7 @@
                       <code class="mono">transform</code> and this one can be
                       either a 2d transformation or a 3d. For the
                       <code class="mono">matrix3d</code> function you use a 4x4
-                      matrix, that is, 16 arguments, for a 2d transformation,
+                      matrix, that is, 16 arguments; for a 2d transformation, 
                       3x3 matrices are used.
                     </p>
                     <p>
@@ -2081,10 +2106,10 @@
                       </tr>
                     </table>
                     <p>
-                      Each transform function takes a matrix. For exmample,
+                      Each transform function takes a matrix. For example,
                       <code class="mono">scale3d</code> takes a 4x4 matrix
-                      represented below, where sx, sy, sz are the transformation
-                      performed to the object in each dimension (X, Y, and Z).
+                      represented below,where sx, sy, sz are the components
+                       of the transformation in each dimension (X, Y, and Z). .
                     </p>
                     <table class="matrix">
                       <tr>
@@ -2116,8 +2141,8 @@
                       An important aspect to keep in mind when working with
                       transformations is that when you have two different
                       transformation functions together, that means you multiply
-                      the two matrices corresponding to the alterations you're
-                      aplying to the object.
+                      the two matrices corresponding to the alterations you're 
+                      applying to the object
                     </p>
                     <p>
                       So, in a nutshell, when you use the CSS property
@@ -2144,18 +2169,18 @@
                       really well. And then things started going down.
                     </p>
                     <p>
-                      Around July I was slaughter by a massive horde of invader
+                      Around July I was slaughtered by a massive horde of invader
                       creeps. And just like that, I started again. Then, a
                       couple weeks ago with my new room and my Room Controller
                       in level 3, I got killed again, only this time the reason
-                      were attacker creeps sent by another player.
+                       was attacker creeps sent by another player
                     </p>
                     <p>
                       So, as you can see, a lot has happened lately. I died a
                       lot of times, but that's not the end of this screeps
                       story. I started a new colony from zero, and my plan is to
                       create at least one room with an unstoppable defense and
-                      attack, and a system of self-mantaining very fancy. I got
+                      attack, with a sophisticated self-maintaining system. I got
                       my new room yesterday. I wrote some code and I got the
                       harvesters, upgraders, and builders running. Here's a
                       screenshot:
@@ -2167,7 +2192,33 @@
                         class="img-box spotlight"
                       >
                     </div>
-                    <p>More info will be provided later.</p>
+                    <p>
+                      A few weeks after that, I was killed again. I 
+                      decided to move to another area of the game and I 
+                      chose a room to start again. This area is know 
+                      ad "Respawn Area". It allows recently killed 
+                      players to grow their colonies without the 
+                      risk of being killed in the middle of the process. It is 
+                      really nice, although it only lasts for a few weeks 
+                      and then you get to be exposed to the other players.
+                    </p>
+                    <p>
+                      I'm doing good in my new room. I got to level 4 and my 
+                      creeps are doing a really good job mantaining everything 
+                      in order and managing the energy. I still need to 
+                      implement some roles to have a complete self-mantained 
+                      colony, but I'll do that later one before I get to 
+                      level 5. This was a fun exercise and it made me 
+                      practice my skills in programming and my knowledge in 
+                      Screeps.
+                    </p>
+                    <div class="img-container">
+                      <img
+                        src="./screeps_ss2.webp"
+                        alt="a screeps room"
+                        class="img-box spotlight"
+                      >
+                    </div>
                   </div>
                 </div>
               </li>
