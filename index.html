@@ -29,7 +29,7 @@
       }
       #btn_container {
         margin: 0.5em;
-        border: 0.1em solid var(--top_bar_border);
+        border: 0.15em solid var(--btn_container);
         border-radius: 0.5em;
         padding: 0.5em;
         position: fixed;
@@ -69,6 +69,9 @@
         --ans: rgb(61 75 41);
         --matrix: rgb(89, 100, 110);
         --link: rgb(48, 82, 72);
+        --btn_color: rgb(94, 74, 54);
+        --btn_hover: rgb(176, 104, 38);
+        --btn_container: rgb(134, 99, 65);
       }
       .dark {
         --bg: rgb(28 23 30);
@@ -83,6 +86,9 @@
         --matrix: rgb(164, 185, 139);
         --math: #c2df3f;
         --link: rgb(255, 245, 98);
+        --btn_color: rgb(255, 173, 102);
+        --btn_hover: rgb(152, 127, 180);
+        --btn_container: rgb(96, 85, 112);
       }
 
       a
@@ -333,7 +339,7 @@
       }
     </style>
   </head>
-  <body class="dark">
+  <body class="light">
     <main>
       <div id="btn_container">
         <div id="theme-btn" class="far fa-moon"></div>
@@ -832,8 +838,7 @@
                     </p>
                     <p>
                       On the other side, the dark version of the website had 
-                      more contrast issues that I had to solve by making the 
-                      font a bit brighter.
+                      more contrast issues that I had to solve.
                     </p>
                     <div class="img-container">
                       <img
@@ -842,6 +847,22 @@
                         class="img-box spotlight"
                       >
                     </div>
+                    <p>
+                      I got rid of the alerts and errors by doing different 
+                      things depending on which was the reason. For the first 
+                      error I need a closing tag for an <code class="mono">h1</code>.
+                      For the landmarks I added a <code class="mono">main</code>
+                      tag to set one on the webpage. For the contrast issues in
+                      light mode, I made the font darker. On the other hand, for 
+                      the dark mode I changed the color to be brighter.
+                    </p>
+                    <p>
+                      This exercise was really interesting. It emphazises the 
+                      importance of well-structured HTML and how important 
+                      the accessibility and correct use of different tags 
+                      and attributes makes your webpage nicer and your code
+                      cleaner.
+                    </p>
                   </div>
                 </div>
               </li>
@@ -1907,7 +1928,10 @@
                       </tr>
                     </table>
                     <p>
-                      Here's what it looks like using MathML.
+                      I tried to create this in MathML but for 
+                      an unknown reason, the browser is not capable 
+                      of rendering correctly the long division.
+                      Instead, it just shows the numbers in line.
                     </p>
                   </div>
                 </div>
@@ -1924,27 +1948,29 @@
                   </div>
                   <div class="ans">
                     <p>
-                      I took BB5 code and inserted it into the Turing Machine Simulator.
-                      I watched it at least 10 times and I also rewatched BB2, BB3,
-                      and BB4 and recorded the steps that BB2 and BB3 make. In the case 
-                      of BB4 I only recorded 20 steps but I was able to find some
-                      similarities between BB5 and all of these.
+                      I integrated BB5's code into the Turing Machine Simulator,
+                       observing it meticulously during at least 10 iterations. 
+                       Additionally, I revisited BB2, BB3, and BB4, meticulously
+                      documenting the operations of BB2 and BB3. For BB4, I captured 
+                      its actions over 20 steps and began to look for intriguing
+                       parallels between BB5 and these iterations.
                     </p>
                     <p>
-                      The similarities are not whole steps between them or 
-                      something like that, but more like steps in which the 
-                      states, symbols, and movements are the same. First of 
-                      all, there are no similarities between BB5, BB2 and BB3. 
-                      I found nothing in common between them. Although, BB4 shares 
-                      some rules with BB5. 
+                      These commonalities aren't entire steps but rather instances
+                       where states, symbols, and movements align. Initially, I
+                        found no notable resemblances between BB5, BB2, and BB3.
+                      However, BB4 did exhibit some shared rules with BB5.
                     </p>
                     <p>
                       The first rule they share is 
                       <code class="mono">q2, _ -> q3, x, ></code>. This rule 
                       appears for the first time in step 13 in BB5 and in step 3 in BB4. And it 
                       repeats a few times after in BB5 (although not following the 
-                      same pattern). The next rules happen to be one after another,
-                      the rules are: 
+                      same pattern). 
+                    </p>
+                    <p>
+                      Subsequently, a sequence of rules unfolds
+                      consecutively in both BB4 and BB5:
                     </p>
                     <ul>
                       <li><code class="mono">q3, x -> q0, x, &lt;</code></li>
@@ -1960,9 +1986,18 @@
                     </p>
                     <p>
                       These were the only steps I identified. They are
-                      repeated differently while BB5 is running, but 
-                      I coudn't tell if there is some sort of "connection"
+                      repeated differently while BB5 is running. While BB5
+                      exhibits variations in its repetitions, 
+                      I couldn't discern any clear "connection" 
                       between BB5 and BB2 or BB3.
+                    </p>
+                    <p>
+                      Indeed, there are rules that might give the
+                       impression of being carried over from previous
+                        busy beavers. However, upon a thorough examination,
+                      it becomes apparent that these rules are distinct
+                       and specific to BB5, emphasizing the intricate 
+                       nature of this Turing machine simulation. 
                     </p>
 
                     <pre class="mono">
@@ -2188,15 +2223,15 @@
                     <div class="img-container">
                       <img
                         src="./screeps_ss1.webp"
-                        alt="a screeps room"
+                        alt="new screeps room"
                         class="img-box spotlight"
                       >
                     </div>
                     <p>
                       A few weeks after that, I was killed again. I 
                       decided to move to another area of the game and I 
-                      chose a room to start again. This area is know 
-                      ad "Respawn Area". It allows recently killed 
+                      chose a room to start again. This is formaly known
+                      as "Respawn Area". It allows recently killed 
                       players to grow their colonies without the 
                       risk of being killed in the middle of the process. It is 
                       really nice, although it only lasts for a few weeks 
@@ -2215,7 +2250,7 @@
                     <div class="img-container">
                       <img
                         src="./screeps_ss2.webp"
-                        alt="a screeps room"
+                        alt="new screeps room in respawn area"
                         class="img-box spotlight"
                       >
                     </div>
